@@ -27,7 +27,11 @@ SECRET_KEY = 'django-insecure-&w6e$f&g2ya6#%-j&&a+ijtyzgwdo@!!q+xvz6^3gq53o+q%)f
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'astrix-backend.onrender.com'
+    'astrix-backend.onrender.com',
+     "astrix-website-two.vercel.app",
+    "127.0.0.1",
+    "localhost",
+    'https://astrix-website-two.vercel.app'
                  ]
 
 
@@ -61,8 +65,7 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:3001"
+   "https://astrix-website-two.vercel.app"
 ]
 
 ROOT_URLCONF = 'project1.urls'
