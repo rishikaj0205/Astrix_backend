@@ -1,6 +1,7 @@
 from logging import exception
 
 from rest_framework.decorators import api_view
+from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.hashers import check_password
@@ -47,7 +48,9 @@ def login_user(request):
         user = Regform.objects.get(email=email)    
 
         if check_password(password, user.password):
-            return Response(({"message": "Login successful",'data': RegformSerializer(user).data}), status=status.HTTP_200_OK)
+            # return Response(({"message": "Login successful",'data': RegformSerializer(user).data}), status=status.HTTP_200_OK)
+            refresh = RefreshToken.for_user(user)
+            return Response({"message": "Login successful","data": RegformSerializer(user).data,"token":str(refresh.access_token),"refresh":str(refresh)}, status=status.HTTP_200_OK)
         else:
             return Response({"error": "Invalid password"}, status=status.HTTP_400_BAD_REQUEST)
 
