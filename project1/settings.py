@@ -65,7 +65,8 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-   "https://astrix-website-two.vercel.app"
+   "https://astrix-website-two.vercel.app",
+    "http://localhost:3000"
 ]
 
 ROOT_URLCONF = 'project1.urls'
