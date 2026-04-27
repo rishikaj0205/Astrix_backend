@@ -29,7 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'astrix-backend.onrender.com',
      "astrix-website-two.vercel.app",
-    "127.0.0.1",
+     "127.0.0.1",
+    # "127.0.0.1:8000",
     "localhost",
     'https://astrix-website-two.vercel.app'
                  ]
@@ -66,7 +67,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
    "https://astrix-website-two.vercel.app",
-    "http://localhost:3000"
+    "http://localhost:3000",
 ]
 
 ROOT_URLCONF = 'project1.urls'
